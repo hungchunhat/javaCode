@@ -61,7 +61,7 @@ class Phone {
 }
 
 class Stock {
-    List<Phone> phoneList = new ArrayList<>();
+    private final List<Phone> phoneList = new ArrayList<>();
 
     public int getPhoneListSize() {
         return phoneList.size();
@@ -178,11 +178,12 @@ public class TestPhone {
                     for (int i = 0; i < quantity; i++) {
                         System.out.println("----->Sản phẩm " + (i + 1) + ":");
                         System.out.print("Nhập hãng SX: ");
+                        scanner.nextLine();
                         String _hangSX = scanner.nextLine();
                         System.out.print("Nhập năm SX: ");
                         int _namSX = scanner.nextInt();
                         System.out.print("Nhập tên ĐT: ");
-                        String _ten = scanner.nextLine();
+                        String _ten = scanner.next();
                         System.out.print("Nhập giá của sp: ");
                         double _gia = scanner.nextDouble();
                         stock1.addPhone(_hangSX, _namSX, _ten, _gia);
@@ -196,7 +197,7 @@ public class TestPhone {
                     stock1.showPhoneListInYear();
                     break;
                 case 4:
-                    System.out.print("Chọn một mốc từ gian cụ thể (xxxx - xxxx):");
+                    System.out.print("Chọn một mốc từ gian cụ thể:");
                     int _namSX1 = scanner.nextInt();
                     int _namSX2 = scanner.nextInt();
                     System.out.println("Từ năm " + _namSX1 + " đến " + _namSX2 + " có những sản phẩm sau:");
@@ -227,10 +228,12 @@ public class TestPhone {
                     System.out.print("Bạn muốn sử thông tin của điện thoại nào: ");
                     int index = scanner.nextInt();
                     System.out.print("Nhập hãng SX: ");
+                    scanner.nextLine();
                     String _hangSX2 = scanner.nextLine();
                     System.out.print("Nhập năm SX: ");
                     int _namSX = scanner.nextInt();
                     System.out.print("Nhập tên ĐT: ");
+                    scanner.nextLine();
                     String _ten = scanner.nextLine();
                     System.out.print("Nhập giá của sp: ");
                     double _gia = scanner.nextDouble();
